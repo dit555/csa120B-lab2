@@ -29,13 +29,15 @@ int main(void) {
 		if ( temp & 0x02 == 0x00)
 			spots++;
 
-		if ( temp & 0x04 == 0x00)
+		if ( temp & 0x03 == 0x00)
                         spots++;
 
-		 if ( temp & 0x08 == 0x00)
+		 if ( temp & 0x04 == 0x00)
                         spots++;
 
-		PORTC = spots;
+		PORTC = spots & 0x0F;
+		if (spots == 0x04)
+			PORTC = PORTC | 0x80;
     	}
     return 1;
 }
