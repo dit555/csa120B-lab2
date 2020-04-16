@@ -20,10 +20,10 @@ int main(void) {
 	unsigned char temp = 0x00;
 	//unsigned char tempB = 0x00;
 	while(1) {
-		temp = PORTA;
+		temp = PINA;
 		if ( temp == 0x00)
 			PORTB = 0x00;
-		else if ( temp & 0x03 == 0x01)
+		else if ( temp == 0x01)
 		       	PORTB = 0x01;
 		else if ( temp & 0x03 == 0x02)
 			PORTB = 0x00;

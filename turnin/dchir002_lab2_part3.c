@@ -21,23 +21,23 @@ int main(void) {
 	unsigned char temp = 0x00;
 	unsigned char spots = 0x00;
 	while(1) {
-		temp = PORTA;
+		temp = PINA;
 		spots = 0x00;
-		if ( temp & 0x01 == 0x00)
+		if ( (temp & 0x01) == 0x00)
 		       spots++;
 
-		if ( temp & 0x02 == 0x00)
+		if ( (temp & 0x02) == 0x00)
 			spots++;
 
-		if ( temp & 0x03 == 0x00)
+		if ( (temp & 0x04) == 0x00)
                         spots++;
 
-		 if ( temp & 0x04 == 0x00)
+		 if ( (temp & 0x08) == 0x00)
                         spots++;
 
 		PORTC = spots & 0x0F;
-		if (spots == 0x04)
-			PORTC = PORTC | 0x80;
+		if (spots == 0x00)
+			PORTC = 0x80;
     	}
     return 1;
 }
