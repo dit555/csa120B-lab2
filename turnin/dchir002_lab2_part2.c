@@ -29,10 +29,10 @@ int main(void) {
 		if ( temp & 0x02 == 0x02)
 			spots++;
 
-		if ( temp & 0x03 == 0x03)
+		if ( temp & 0x04 == 0x04)
                         spots++;
 
-		 if ( temp & 0x04 == 0x04)
+		 if ( temp & 0x08 == 0x08)
                         spots++;
 
 		PORTB = spots;
